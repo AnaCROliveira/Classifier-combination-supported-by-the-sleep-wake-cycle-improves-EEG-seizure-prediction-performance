@@ -34,7 +34,24 @@ It is possible to execute this code after downloading patient files from CAP Sle
 
 Is it not possible to execute this code since it requires the raw data from EEG recordings. As we used data from EPILEPSIAE, we can not make it publicly available online due to ethical concerns.
 
+### EPILEPSIAE
+- **Data**: folder where the data (npy files) should be located.
+  
 ### Code
 
-
-
+- [main.py] - code to execute all steps of the seizure prediction algorithm (data preprocessing, training, and testing).
+- [import_data.py] - code with functions to import data and metadata.
+- [pre_processing.py] - code with functions to pre-process signals (filtering and downsampling).
+- [feature_extraction.py] - code with a function to extract features.
+  - **getFeatures**: folder with code to get features (statistical moments, energy of wavelet coefficients, relative spectral powers, spectral edge power and frequency, and Hjörth parameters)
+- [vigilance.py] - code with functions to compute patients' vigilance states with the CAP Sleep sleep-wake detection model.
+- [splitting.py] - code with a function to split data into train and test.
+- [main_train.py] -  code with a function to forward the training step to the chosen approach.
+  - **getTraining**: folder with code of each approach to train the seizure prediction model (Approaches: Control, Feature<sub>state</sub>, Pool<sub>weights</sub>, Pool<sub>exclusive</sub>, Threshold<sub>state</sub>, Threshold<sub>transitions</sub>)
+- [main_test.py] - code with a function to forward the testing step to the chosen approach.
+  - **getTraining**: folder with code of each approach to test the seizure prediction model (Approaches: Control, Feature<sub>state</sub>, Pool<sub>weights</sub>, Pool<sub>exclusive</sub>, Threshold<sub>state</sub>, Threshold<sub>transitions</sub>)
+- [auxiliary_fun.py] - code with auxiliary functions used in training and testing.
+- [regularization.py] - code with functions to implement the Firing Power regularization method and generate alarms.
+- [evaluation.py] - code with functions to compute performance (SS and FPR/h) and perform statistical validation (surrogate analysis).
+- [save_results.py] - code with functions to save models and results.
+- [plot_results.py] - code with functions to plot results.
