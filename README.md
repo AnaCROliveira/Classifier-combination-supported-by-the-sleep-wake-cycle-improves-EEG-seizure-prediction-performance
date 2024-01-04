@@ -33,6 +33,13 @@ It is possible to execute this code after downloading patient files from CAP Sle
 ## Seizure prediction algorithm
 
 Is it not possible to execute this code since it requires the raw data from EEG recordings. As we used data from EPILEPSIAE, we can not make it publicly available online due to ethical concerns.
+Approaches brief description:
+- _Control_: Standard seizure prediction algorithm, the control method, that does not use sleep-wake information. 
+- _Feature<sub>state</sub>_: Seizure prediction algorithm with an extra feature of the vigilance state in model training.
+- _Pool<sub>weights</sub>_: Seizure prediction algorithm with a pool of two distinct models, each trained with all samples according to weights, assigned based on the vigilance state.
+- _Pool<sub>exclusive</sub>_: Seizure prediction algorithm with a pool of two distinct models, each trained with samples exclusively from the respective vigilance state.
+- _Threshold<sub>state</sub>_: Seizure prediction algorithm with a different threshold for each vigilance state in the post-processing phase.
+- _Threshold<sub>transitions</sub>_: Seizure prediction algorithm with a different threshold for vigilance state transitions in the post-processing phase.
 
 ### EPILEPSIAE
 - **Data**: folder where the data (npy files) should be located.
