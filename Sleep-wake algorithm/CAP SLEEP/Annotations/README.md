@@ -1,0 +1,1 @@
+- **Annotations**: folder where the annotations (txt files) should be located.

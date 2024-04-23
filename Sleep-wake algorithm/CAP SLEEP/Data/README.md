@@ -1,0 +1,1 @@
+- **Data**: folder where the data (edf files) should be located.
